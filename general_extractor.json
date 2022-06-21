@@ -1,0 +1,63 @@
+{
+    "extractors": [
+      {
+        "title": "Hostname",
+        "extractor_type": "split_and_index",
+        "converters": [],
+        "order": 0,
+        "cursor_strategy": "copy",
+        "source_field": "message",
+        "target_field": "Hostname",
+        "extractor_config": {
+          "index": 4,
+          "split_by": " "
+        },
+        "condition_type": "none",
+        "condition_value": ""
+      },
+      {
+        "title": "Loglevel",
+        "extractor_type": "regex",
+        "converters": [],
+        "order": 0,
+        "cursor_strategy": "copy",
+        "source_field": "message",
+        "target_field": "Loglevel",
+        "extractor_config": {
+          "regex_value": "(?<=<)(.*?)(?=>)"
+        },
+        "condition_type": "none",
+        "condition_value": ""
+      },
+      {
+        "title": "Logname",
+        "extractor_type": "regex",
+        "converters": [],
+        "order": 0,
+        "cursor_strategy": "copy",
+        "source_field": "message",
+        "target_field": "Logname",
+        "extractor_config": {
+          "regex_value": "(?<=\\/)(.*?)(?=\\:)"
+        },
+        "condition_type": "none",
+        "condition_value": ""
+      },
+      {
+        "title": "Logtype",
+        "extractor_type": "split_and_index",
+        "converters": [],
+        "order": 0,
+        "cursor_strategy": "copy",
+        "source_field": "message",
+        "target_field": "Logtype",
+        "extractor_config": {
+          "index": 7,
+          "split_by": " "
+        },
+        "condition_type": "none",
+        "condition_value": ""
+      }
+    ],
+    "version": "4.3.2"
+  }
