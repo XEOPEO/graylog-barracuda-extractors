@@ -1,35 +1,6 @@
 {
   "extractors": [
     {
-      "title": "Protocol",
-      "extractor_type": "split_and_index",
-      "converters": [],
-      "order": 0,
-      "cursor_strategy": "copy",
-      "source_field": "message",
-      "target_field": "Protocol",
-      "extractor_config": {
-        "index": 2,
-        "split_by": "|"
-      },
-      "condition_type": "none",
-      "condition_value": ""
-    },
-    {
-      "title": "Type",
-      "extractor_type": "regex",
-      "converters": [],
-      "order": 0,
-      "cursor_strategy": "copy",
-      "source_field": "message",
-      "target_field": "Type",
-      "extractor_config": {
-        "regex_value": "(?<=\\s)([a-zA-Z]+)(?=\\|)"
-      },
-      "condition_type": "none",
-      "condition_value": ""
-    },
-    {
       "title": "srcIF",
       "extractor_type": "split_and_index",
       "converters": [],
@@ -39,6 +10,36 @@
       "target_field": "srcIF",
       "extractor_config": {
         "index": 3,
+        "split_by": "|"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "srcIP",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "srcIP",
+      "extractor_config": {
+        "index": 4,
+        "split_by": "|"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Protocol",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "Protocol",
+      "extractor_config": {
+        "index": 2,
         "split_by": "|"
       },
       "condition_type": "none",
@@ -60,6 +61,20 @@
       "condition_value": ""
     },
     {
+      "title": "Type",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "Type",
+      "extractor_config": {
+        "regex_value": "(?<=\\s)([a-zA-Z]+)(?=\\|)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
       "title": "Action",
       "extractor_type": "regex",
       "converters": [],
@@ -74,21 +89,6 @@
       "condition_value": ""
     },
     {
-      "title": "srcIP",
-      "extractor_type": "split_and_index",
-      "converters": [],
-      "order": 0,
-      "cursor_strategy": "copy",
-      "source_field": "message",
-      "target_field": "srcIP",
-      "extractor_config": {
-        "index": 4,
-        "split_by": "|"
-      },
-      "condition_type": "none",
-      "condition_value": ""
-    },
-    {
       "title": "srcMAC",
       "extractor_type": "split_and_index",
       "converters": [],
@@ -98,6 +98,21 @@
       "target_field": "srcMAC",
       "extractor_config": {
         "index": 6,
+        "split_by": "|"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "info",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "info",
+      "extractor_config": {
+        "index": 12,
         "split_by": "|"
       },
       "condition_type": "none",
@@ -149,36 +164,6 @@
       "condition_value": ""
     },
     {
-      "title": "info",
-      "extractor_type": "split_and_index",
-      "converters": [],
-      "order": 0,
-      "cursor_strategy": "copy",
-      "source_field": "message",
-      "target_field": "info",
-      "extractor_config": {
-        "index": 12,
-        "split_by": "|"
-      },
-      "condition_type": "none",
-      "condition_value": ""
-    },
-    {
-      "title": "dstService",
-      "extractor_type": "split_and_index",
-      "converters": [],
-      "order": 0,
-      "cursor_strategy": "copy",
-      "source_field": "message",
-      "target_field": "dstService",
-      "extractor_config": {
-        "index": 9,
-        "split_by": "|"
-      },
-      "condition_type": "none",
-      "condition_value": ""
-    },
-    {
       "title": "dstIP",
       "extractor_type": "split_and_index",
       "converters": [],
@@ -224,36 +209,6 @@
       "condition_value": ""
     },
     {
-      "title": "recvBytes",
-      "extractor_type": "split_and_index",
-      "converters": [],
-      "order": 0,
-      "cursor_strategy": "copy",
-      "source_field": "message",
-      "target_field": "recvBytes",
-      "extractor_config": {
-        "index": 17,
-        "split_by": "|"
-      },
-      "condition_type": "none",
-      "condition_value": ""
-    },
-    {
-      "title": "count",
-      "extractor_type": "split_and_index",
-      "converters": [],
-      "order": 0,
-      "cursor_strategy": "copy",
-      "source_field": "message",
-      "target_field": "count",
-      "extractor_config": {
-        "index": 16,
-        "split_by": "|"
-      },
-      "condition_type": "none",
-      "condition_value": ""
-    },
-    {
       "title": "duration",
       "extractor_type": "split_and_index",
       "converters": [],
@@ -269,15 +224,15 @@
       "condition_value": ""
     },
     {
-      "title": "sentBytes",
+      "title": "dstService",
       "extractor_type": "split_and_index",
       "converters": [],
       "order": 0,
       "cursor_strategy": "copy",
       "source_field": "message",
-      "target_field": "sentBytes",
+      "target_field": "dstService",
       "extractor_config": {
-        "index": 18,
+        "index": 9,
         "split_by": "|"
       },
       "condition_type": "none",
@@ -299,19 +254,34 @@
       "condition_value": ""
     },
     {
-      "title": "recvPkts",
+      "title": "count",
       "extractor_type": "split_and_index",
       "converters": [],
       "order": 0,
       "cursor_strategy": "copy",
       "source_field": "message",
-      "target_field": "recvPkts",
+      "target_field": "count",
       "extractor_config": {
-        "index": 19,
+        "index": 16,
         "split_by": "|"
       },
       "condition_type": "none",
       "condition_value": ""
+    },
+    {
+      "title": "user",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "user",
+      "extractor_config": {
+        "index": 21,
+        "split_by": "|"
+      },
+      "condition_type": "regex",
+      "condition_value": "(.|\\s)*\\S(.|\\s)*"
     },
     {
       "title": "application",
@@ -329,15 +299,45 @@
       "condition_value": "(.|\\s)*\\S(.|\\s)*"
     },
     {
-      "title": "user",
+      "title": "sentBytes",
       "extractor_type": "split_and_index",
       "converters": [],
       "order": 0,
       "cursor_strategy": "copy",
       "source_field": "message",
-      "target_field": "user",
+      "target_field": "sentBytes",
       "extractor_config": {
-        "index": 21,
+        "index": 18,
+        "split_by": "|"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "recvPkts",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "recvPkts",
+      "extractor_config": {
+        "index": 19,
+        "split_by": "|"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "target",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "target",
+      "extractor_config": {
+        "index": 24,
         "split_by": "|"
       },
       "condition_type": "regex",
@@ -358,19 +358,62 @@
       "condition_value": "(.|\\s)*\\S(.|\\s)*"
     },
     {
-      "title": "target",
+      "title": "recvBytes",
       "extractor_type": "split_and_index",
       "converters": [],
       "order": 0,
       "cursor_strategy": "copy",
       "source_field": "message",
-      "target_field": "target",
+      "target_field": "recvBytes",
       "extractor_config": {
-        "index": 24,
+        "index": 17,
         "split_by": "|"
       },
-      "condition_type": "regex",
-      "condition_value": "(.|\\s)*\\S(.|\\s)*"
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Logname",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "Logname",
+      "extractor_config": {
+        "regex_value": "(?<=\\/)([^\\/]+?)(?=\\:)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "extract-email-user-vpn",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "email",
+      "extractor_config": {
+        "regex_value": "([a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Hostname",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "Hostname",
+      "extractor_config": {
+        "index": 4,
+        "split_by": " "
+      },
+      "condition_type": "none",
+      "condition_value": ""
     }
   ],
   "version": "4.3.2"
