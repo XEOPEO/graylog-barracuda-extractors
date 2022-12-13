@@ -24,7 +24,7 @@
       "source_field": "message",
       "target_field": "Logname",
       "extractor_config": {
-        "regex_value": "(?<=\\/)(.*?)(?=\\:)"
+        "regex_value": "(?<=\/)([^/]*?)\:"
       },
       "condition_type": "none",
       "condition_value": ""
